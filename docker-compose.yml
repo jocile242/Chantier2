@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  dbchantier:
+    image: mysql:latest
+    container_name: dbchantier
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pmachantier
+    links:
+      - dbchantier
+    environment:
+      PMA_HOST: dbchantier
+      PMA_PORT: 3306
+    restart: always
+    ports:
+      - 8181:80
+volumes:
+  dbdata:
