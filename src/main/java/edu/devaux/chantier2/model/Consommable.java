@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.mapping.List;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -18,7 +19,7 @@ public class Consommable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
     protected String nom;
-    protected Tache tache;
+    protected List tache;
 }
 
 
