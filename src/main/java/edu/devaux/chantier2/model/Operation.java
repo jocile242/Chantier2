@@ -7,23 +7,23 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Getter
 @Setter
 @Entity
-public class Utilisateur {
+public class Operation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
-    protected String pseudo;
-    protected String motdepasse;
-//    protected String role;
-    protected List role;
+    protected String nom;
+    protected LocalDate date;
+    protected Chantier chantier;
 }
 
 
-
-//Un utilisateur :
-//possède un pseudo et un mot de passe
-//possède un rôle (client, ouvrier, administrateur)
+//Une opération :
+// est planifiée pour un chantier à une date donnée
+//concerne une tâche
+//est affecté à un ouvrier (un utilisateur)
