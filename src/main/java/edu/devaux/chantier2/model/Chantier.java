@@ -21,12 +21,9 @@ public class Chantier {
 
     protected String adresse;
 
-    @OneToMany
-    @JoinColumn(name = "chantier")
-    protected List<Tache> taches = new ArrayList<>();
+    @ManyToOne
+    protected Operation operations;
 
-    @OneToMany(mappedBy = "chantier")
-    protected List<Operation> operations = new ArrayList<>();
 
 
 }

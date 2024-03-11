@@ -17,10 +17,5 @@ public class Tache {
     protected String nom;
     protected Integer temps;
 
-    @ManyToOne
-    @JoinColumn(name = "chantier_id", referencedColumnName = "id", columnDefinition = "INTEGER")
-    protected Chantier chantier;
 
-    @OneToMany(mappedBy = "tache")
-    protected List<Consommable> consommables = new ArrayList<>();
 }

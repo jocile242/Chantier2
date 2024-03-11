@@ -19,7 +19,6 @@ public class Operation {
     protected Integer id;
     protected String nom;
     protected LocalDate date;
-    protected Chantier chantier;
 }
 
 

@@ -19,7 +19,6 @@ public class Utilisateur {
     protected String pseudo;
     protected String motdepasse;
 //    protected String role;
-    protected List role;
 }
 
 
