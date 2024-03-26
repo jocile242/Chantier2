@@ -1,9 +1,8 @@
 package edu.devaux.chantier2.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.mapping.List;
@@ -18,6 +17,11 @@ public class Consommable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
+
+
+    @NotBlank(message = "le consommable ne peut etre sans valeur")
+    @Size(min = 2, max = 100, message = "La valeur du consommable ne doit pas etre inferieur à 2 ou séperieur à 100")
+    @Column(length = 100)
     protected String nom;
 }
 

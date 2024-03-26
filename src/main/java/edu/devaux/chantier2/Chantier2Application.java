@@ -8,6 +8,6 @@ public class Chantier2Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Chantier2Application.class, args);
-    }
 
+    }
 }
